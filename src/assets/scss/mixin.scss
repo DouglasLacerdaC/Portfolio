@@ -1,0 +1,23 @@
+@import '../scss/variables.scss';
+
+@mixin hamburguer() {
+    content: '';
+    position: absolute;
+    background-color: $light-blue;
+    height: 5px;
+    border-radius: 50px;
+    transition: .5s ease-in;
+}
+
+@mixin hamburguer-open() {
+    width: 35px;
+    transform: rotate(90deg);
+    bottom: 0;
+    top: 0;
+}
+
+@mixin flex($main-axis, $cross-axis) {
+    display: flex;
+    justify-content: $main-axis;
+    align-items: $cross-axis;
+}

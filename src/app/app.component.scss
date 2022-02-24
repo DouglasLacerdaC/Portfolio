@@ -1,0 +1,88 @@
+@import '../assets/scss/variables.scss';
+@import '../assets/scss/mixin.scss';
+
+header {
+    padding: 20px;
+    background-color: #000000;
+
+    .container {
+        @include flex(space-between, center);
+
+        h4 {
+            color: $white-color;
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+
+        .menu {
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            padding: 20px;
+            border: 1px solid $white-color;
+            cursor: pointer;
+
+            &.menu-open {
+                
+                .hamburguer {
+                    width: 35px;
+                    transform: rotate(45deg);
+
+                    &::before {
+                        @include hamburguer-open();
+                    }
+                    
+                    &::after {
+                        @include hamburguer-open();
+                    }
+
+                }
+
+            }
+
+            .hamburguer {
+                position: relative;
+                top: 7px;
+                left: -8px;
+                width: 20px;
+                height: 5px;
+                background-color: $light-blue;
+                border-radius: 50px;
+                transition: .5s ease-in;
+
+
+                &::before, &::after {
+                    @include hamburguer()
+                }
+
+                &::before {
+                    width: 30px;
+                    top: -11px;
+                }
+                
+                &::after {
+                    width: 35px;
+                    bottom: -11px;
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+.content {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(180.62deg, #000000 0.54%, #560074 101.84%, rgba(255, 255, 255, 0) 101.85%);
+}
