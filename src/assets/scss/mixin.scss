@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
 @import '../scss/variables.scss';
 
 @mixin hamburguer() {
@@ -6,18 +7,25 @@
     background-color: $light-blue;
     height: 5px;
     border-radius: 50px;
-    transition: .5s ease-in;
+    transition: 300ms ease-in;
 }
 
 @mixin hamburguer-open() {
     width: 35px;
     transform: rotate(90deg);
-    bottom: 0;
-    top: 0;
 }
 
-@mixin flex($main-axis, $cross-axis) {
+@mixin flex($justify, $align, $direction) {
     display: flex;
-    justify-content: $main-axis;
-    align-items: $cross-axis;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+@mixin h3($color, $top, $bottom) {
+    font-size: 3em;
+    color: $color;
+    font-weight: bolder;
+    font-family: 'Montserrat', sans-serif;
+    margin: $top 0 $bottom 0;
 }
