@@ -155,3 +155,28 @@
 
 
 </div>
+
+<div class="skills">
+
+    <div class="container">
+
+        <h3 class="right" #aside>
+            Minhas habilidades em destaque
+        </h3>
+
+    </div>
+
+    <div class="slider-skills" (mousedown)="down($event)" 
+        (mousemove)="move($event)" (mouseenter)="enter()" (mouseup)="up()" #sliderSkills>
+
+        <div class="slider" #slider>
+
+            <div *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]" class="card">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

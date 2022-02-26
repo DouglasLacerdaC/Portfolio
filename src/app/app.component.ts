@@ -12,7 +12,13 @@ export class AppComponent implements OnInit {
   @ViewChild('navMenu') navMenu: any
   @ViewChildren('aside') aside: any
 
+  @ViewChild('sliderSkills') sliderSkills: any
+  @ViewChild('slider') slider: any
+
   projects = Projects
+  pressed: boolean = false
+  startX: any
+  x: any
   
   constructor() {}
 
@@ -21,6 +27,12 @@ export class AppComponent implements OnInit {
     window.addEventListener('scroll', () => {
 
       this.animaScroll()
+
+    })
+
+    window.addEventListener('mouseup', () => {
+
+      this.pressed = false
 
     })
 
@@ -59,4 +71,41 @@ export class AppComponent implements OnInit {
 
   }
 
+  down(e: MouseEvent) {
+
+    this.pressed = true
+    this.startX = e.offsetX - this.slider.nativeElement.offsetLeft
+    this.sliderSkills.nativeElement.style.cursor = 'grabbing'
+
+  }
+
+  move(e: MouseEvent) {
+
+    if(!this.pressed) {
+      return e.preventDefault()
+    }
+
+    this.x = e.offsetX
+
+    this.slider.nativeElement.style.left = `${this.x - this.startX}px`
+
+    if(parseInt(this.slider.nativeElement.style.left) > 10)
+      this.slider.nativeElement.style.left = '0px'
+
+  }
+
+  enter() {
+          
+    this.sliderSkills.nativeElement.style.cursor = 'grab'
+
+  }
+
+  up() {
+          
+    this.sliderSkills.nativeElement.style.cursor = 'grab'
+
+  }
+
+
 }
+
