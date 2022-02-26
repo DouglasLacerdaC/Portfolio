@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ViewChildren } from '@angular/core';
+import { Projects } from 'src/data/projects';
 
 @Component({
   selector: 'app-root',
@@ -10,13 +11,17 @@ export class AppComponent implements OnInit {
   @ViewChild('menu') menu: any
   @ViewChild('navMenu') navMenu: any
   @ViewChildren('aside') aside: any
+
+  projects = Projects
   
   constructor() {}
 
   ngOnInit(): void {
 
     window.addEventListener('scroll', () => {
+
       this.animaScroll()
+
     })
 
   }

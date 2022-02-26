@@ -14,6 +14,10 @@
 .container {
     max-width: 1000px;
     margin: 0 auto;
+
+    @media(max-width: 1000px) {
+        padding: 0 20px;
+    }
 }
 
 h1 {
@@ -21,28 +25,36 @@ h1 {
     font-weight: bolder;
     font-family: 'Montserrat', sans-serif;
     color: $white-color;
+
+    @media(max-width: 850px) {
+        font-size: 3em;
+    }
 }
 
-.bottom, .right, .left {
+.top, .bottom, .right, .left {
     position: relative;
-    z-index: -1;
     opacity: 0;
     transition: 700ms;
 }
 
+.top {
+    transform: translate3d(0, -150px, 0);
+}
+
 .bottom {
-    transform: translate3d(0, 100px, 0);
+    transform: translate3d(0, 150px, 0);
 }
 
 .right {
-    transform: translate3d(100px, 0, 0);
+    transform: translate3d(20px, 0, 0);
 }
 
 .left {
-    transform: translate3d(-100px, 0, 0);
+    transform: translate3d(0, -20px, 0);
 }
 
 .aside-animation {
-    opacity: 1;
     transform: translate3d(0, 0, 0);
+    bottom: 0;
+    opacity: 1;
 }

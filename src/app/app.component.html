@@ -87,7 +87,7 @@
 
             </div>
 
-            <img class="left" #aside src="../assets/img/pc.png" alt="">
+            <img class="bottom" #aside src="../assets/img/pc.png" alt="">
 
         </div>
 
@@ -97,4 +97,61 @@
 
 <div class="projects">
     
+    <div class="container">
+
+        <h3 class="bottom" #aside>
+            E os projetos?
+        </h3>
+
+        <p class="bottom subtitle" #aside>
+            Aqui estão
+        </p>
+
+        <div class="flex">
+    
+            <div class="cards-projects">
+    
+                <div *ngFor="let project of projects" class="card bottom" #aside>
+    
+                    <div class="image">
+    
+                        <img src="{{ project.image }}" alt="">
+    
+                    </div>
+
+                    <div class="content-card">
+
+                        <h4>
+                            {{ project.name }}
+                        </h4>
+
+                        <p class="description">
+                            {{ project.description }}
+                        </p>
+
+                        <div class="button">
+
+                            <a href="">Visualizar projeto</a>
+
+                        </div>
+
+                    </div>
+    
+                </div>
+    
+            </div>
+
+            <div class="animate">
+                
+                <div class="row-first top" #aside></div>
+                <div class="row-second bottom" #aside></div>
+                <div class="row-third bottom" #aside></div>
+
+            </div>
+    
+        </div>
+
+    </div>
+
+
 </div>

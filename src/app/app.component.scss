@@ -6,6 +6,11 @@ header {
     width: 100%;
     padding: 20px;
     background: linear-gradient(180deg, #00000087 -20%, rgba(22, 0, 30, 0) 87.25%);
+    z-index: 1000;
+
+    @media(max-width: 1000px) {
+        padding: 20px 0;
+    }
 
     .container {
         @include flex(space-between, center, row);
@@ -78,7 +83,7 @@ header {
     
     .links {
         @include flex(center, center, row);
-        position: absolute;
+        position: fixed;
         left: -300px;
         top: -150px;
         min-width: 300px;
@@ -89,7 +94,7 @@ header {
         z-index: 2000;
 
         & + .background-links {
-            position: absolute;
+            position: fixed;
             left: 0;
             top: 0;
             width: 100%;
@@ -168,10 +173,25 @@ header {
     .container {
         @include flex(flex-end, center, row);
 
+        @media(max-width: 660px) {
+            margin: 70px 0 0;
+            @include flex(center, center, column-reverse);
+        }
+
         .content {
+
+            @media(max-width: 650px) {
+                text-align: center;
+                padding: 0 0 150px 0;
+            }
 
             h1 {
                 line-height: 65px;
+
+                @media(max-width: 900px) {
+                    line-height: 50px;
+                }
+
             }
 
             p {
@@ -187,6 +207,15 @@ header {
             width: 300px;
             border-radius: 50%;
             border: 6px solid #350047;
+
+            @media(max-width: 900px) {
+                width: 200px;
+            }
+
+            @media(max-width: 630px) {
+                margin: 70px 0 50px 0;
+            }
+        
         }
 
     }
@@ -205,6 +234,10 @@ header {
         .flex {
             @include flex(space-between, center, row);
             margin: 0 0 80px 0;
+
+            @media(max-width: 900px) {
+                @include flex(center, center, column)
+            }
 
             .content {
 
@@ -229,4 +262,195 @@ header {
 .projects {
     min-height: 100vh;
     background-color: $second-color;
+    margin-bottom: 300px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.44);
+
+    .container {
+
+        h3 {
+            @include h3($white-color, 50px, 0);
+        }
+
+        .subtitle {
+            color: #FFFFFF99;
+            font-size: 1.2em;
+            margin: 5px 0 100px 0;
+
+            @media(max-width: 660px) {
+                margin: 5px 0 50px 0;
+            }
+
+        }
+
+
+        .flex {
+            @include flex(space-between, center, row);
+            
+            @media(max-width: 1070px) {
+                @include flex(center, center, row);
+            }
+
+            @media(max-width: 660px) {
+                @include flex(center, center, column);
+            }
+
+            .cards-projects {
+                @include flex(flex-start, center, row);
+                gap: 40px 50px;
+                flex-wrap: wrap;
+                max-width: 630px;
+                padding: 20px 0;
+
+                @media(max-width: 1000px) {
+                    @include flex(center, center, column);
+                }
+
+
+                .card {
+                    background-color: $white-color;
+                    border-radius: 10px;
+                    @include flex(flex-start, center, column);
+                    max-width: 280px;
+                    transition: 1s;
+                    box-shadow: 0px 5px 36px rgba(0, 0, 0, 0.47);
+
+                    @media(max-width: 660px) {
+                        @include flex(center, center, column);
+                    }
+
+                    &:nth-child(2), &:nth-child(4) {
+                        position: relative;
+                        top: 100px;
+
+                        @media(max-width: 1020px) {
+                            top: 0;
+                        }
+
+                    }
+
+                    .image {
+                        text-align: center;
+                        position: relative;
+                        top: -25px;
+
+                        img {
+                            width: 100px;
+                            user-select: none;
+                        }
+
+                    }
+
+                    .content-card {
+                        min-width: 105%;
+                        background-color: $first-color;
+                        box-shadow: 0px -10px 20px rgba(0, 0, 0, 0.29);
+                        border-radius: 55px 55px 10px 10px;
+                        padding: 35px 25px;
+
+                        h4 {
+                            font-weight: bolder;
+                            font-family: 'Montserrat', sans-serif;
+                            font-size: 1.7em;
+                            letter-spacing: 1px;
+                            color: $white-color;
+                            border-bottom: 1px solid #ffffff20;
+                            padding: 0 0 5px 0;
+                            margin: 0 0 20px 0;
+                        }
+
+                        p {
+                            font-size: 12px;
+                            line-height: 20px;
+                            padding: 0;
+                            color: #FFFFFF99;
+                            margin: 0 0 30px 0;
+                        }
+
+                        .button {
+                            text-align: end;
+                            
+                            a {
+                                background-color: $white-color;
+                                box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.45);
+                                text-align: end;
+                                text-decoration: none;
+                                color: $first-color;
+                                font-size: 15px;
+                                padding: 3px 20px;
+                                border-radius: 5px;
+                            }
+                        }
+
+                    }
+
+                }
+
+            }
+
+            .animate {
+                @include flex(center, center, column);
+                gap: 50px;
+
+                @media(max-width: 1070px) {
+                    display: none;
+                }
+
+                @media(max-width: 660px) {
+                    @include flex(center, center, column);
+                    padding: 50px 0;
+                }
+                
+                .row-first {
+                    @include row(4px, 350px);
+
+                    @media(max-width: 660px) {
+                        height: 100px !important;
+                    }
+
+                    &::after {
+                        @include triangle(0deg);
+                        left: -23px;    
+                    
+                    }
+
+                }
+                
+                .row-second {
+                    @include row(300px, 4px);
+
+                    &::after {
+                        @include triangle(90deg);
+                        right: -23px;
+                        top: -10px;
+                    }
+
+                    &::before {
+                        @include triangle(-90deg);
+                        left: -23px;
+                        top: -10px;
+                    }
+
+                }
+                
+                .row-third {
+                    @include row(4px, 350px);
+
+                    @media(max-width: 660px) {
+                        height: 100px !important;
+                    }
+
+                    &::after {
+                        @include triangle(180deg);
+                        left: -23px;
+                        bottom: 0;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
 }

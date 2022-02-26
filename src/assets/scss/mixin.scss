@@ -27,5 +27,30 @@
     color: $color;
     font-weight: bolder;
     font-family: 'Montserrat', sans-serif;
-    margin: $top 0 $bottom 0;
+    padding: $top 0 $bottom 0;
+
+    @media(max-width: 850px) {
+        font-size: 2em;
+    }
+
+}
+
+@mixin triangle($rotate) {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0; 
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 25px solid $color-row;
+    transform: rotate($rotate);
+    filter: drop-shadow(-5px 0px 20px $color-row);
+}
+
+@mixin row($width, $height) {
+    position: relative;
+    width: $width;
+    height: $height;
+    background-color: $color-row;
+    box-shadow: -5px 0px 20px $color-row;
 }
