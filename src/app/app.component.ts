@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ViewChildren } from '@angular/core';
 import { Projects } from 'src/data/projects';
+import { Skills } from 'src/data/skills';
 
 @Component({
   selector: 'app-root',
@@ -14,8 +15,12 @@ export class AppComponent implements OnInit {
 
   @ViewChild('sliderSkills') sliderSkills: any
   @ViewChild('slider') slider: any
+  
+  @ViewChild('skillsSection') skillsSection: any
 
   projects = Projects
+  skills = Skills
+
   pressed: boolean = false
   startX: any
   x: any
@@ -55,6 +60,12 @@ export class AppComponent implements OnInit {
 
     const topPage = window.pageYOffset + ((window.innerHeight * 3) / 4)
     
+    if(this.skillsSection.nativeElement.getBoundingClientRect().top < 100) {
+
+      this.slider.nativeElement.style.animation = 'slider 20s infinite'
+
+    }
+    
     this.aside.forEach((element: any) => {
 
       if(topPage > element.nativeElement.offsetTop) {
@@ -77,6 +88,8 @@ export class AppComponent implements OnInit {
     this.startX = e.offsetX - this.slider.nativeElement.offsetLeft
     this.sliderSkills.nativeElement.style.cursor = 'grabbing'
 
+    this.slider.nativeElement.style.animation = ''
+
   }
 
   move(e: MouseEvent) {
@@ -84,6 +97,8 @@ export class AppComponent implements OnInit {
     if(!this.pressed) {
       return e.preventDefault()
     }
+
+    this.slider.nativeElement.style.animation = ''
 
     this.x = e.offsetX
 

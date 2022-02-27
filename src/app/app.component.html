@@ -156,7 +156,7 @@
 
 </div>
 
-<div class="skills">
+<div class="skills" #skillsSection>
 
     <div class="container">
 
@@ -171,8 +171,8 @@
 
         <div class="slider" #slider>
 
-            <div *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]" class="card">
-
+            <div *ngFor="let skill of skills" class="card">
+                <img src="{{ skill.img }}" alt="">
             </div>
 
         </div>
