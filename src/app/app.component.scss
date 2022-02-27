@@ -459,7 +459,7 @@ header {
     background-image: url('../assets/img/bg.svg'), linear-gradient(180deg, rgba(189, 0, 255, 0.11) 51.99%, rgba(247, 232, 253, 0) 106.2%);
     background-repeat: no-repeat;
     background-position: center right;
-    margin-bottom: 500px;
+    padding: 0 0 80px 0;
 
     .container {
         
@@ -509,6 +509,86 @@ header {
         }
 
     }
+
+}
+
+.formations {
+    min-height: 100vh;
+    margin-bottom: 40px;
+
+    .container {
+
+        h3 {
+            @include h3($first-color, 40px, 80px);
+        }
+
+        .courses {
+    
+            
+            
+            .course {
+                margin-bottom: 20px;
+                
+                &:last-child {
+                    margin: 0;
+    
+                    .to-bottom {
+                        display: none
+                    }
+    
+                }
+                
+                .flex {
+                    @include flex(flex-start, center, row);
+                    gap: 20px;
+
+                    .icon {
+                        @include flex(center, center, row);
+                        animation: animationCourse 3s linear infinite;
+                        background-image: linear-gradient(90deg,#560074,#d135fe,#560074,#d135fe);
+                        background-size: 300% 100%;
+                        padding: 10px;
+                        border-radius: 50%;
+                    }
+
+                    .informations {
+
+                        h4 {
+                            font-family: 'Montserrat', sans-serif;
+                            color: $first-color;
+                            font-size: 1.3em;
+                        }
+
+                        p {
+                            color: $first-color;
+                            opacity: 0.7;
+                        }
+
+                        span {
+                            font-size: 12px;
+                            color: $first-color;
+                            opacity: 0.7;
+                        }
+
+                    }
+
+                }
+
+                .to-bottom {
+                    width: 4px;
+                    height: 50px;
+                    background: linear-gradient(180deg, #C349ED 0%, rgba(255, 255, 255, 0) 100%);
+                    margin: 10px 0 0 34px;
+                    border-radius: 20px;
+
+                }
+    
+            }
+    
+        }
+        
+    }
+
 
 }
 
@@ -569,4 +649,9 @@ header {
     }
 
 
+}
+
+@keyframes animationCourse {
+    0% { background-position: 100% 0%; }
+    100% { background-position: 0% 0%; }
 }
