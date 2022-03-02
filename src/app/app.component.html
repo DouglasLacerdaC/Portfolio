@@ -18,15 +18,19 @@
     
     <div class="links" #navMenu>
 
+        <div class="memoji">
+            <img src="../assets/img/memoji.png" width="100" alt="">
+        </div>
+
         <nav>
 
             <ul>
 
-                <li><a href="">Quem sou eu?</a></li>
-                <li><a href="">Projetos</a></li>
-                <li><a href="">Minhas habilidades</a></li>
-                <li><a href="">Formação Acadêmica</a></li>
-                <li><a href="">Contato</a></li>
+                <li><a (click)="closeMenu()" href="#about-me">Quem sou eu?</a></li>
+                <li><a (click)="closeMenu()" href="#projects">Projetos</a></li>
+                <li><a (click)="closeMenu()" href="#skills">Minhas habilidades</a></li>
+                <li><a (click)="closeMenu()" href="#formations">Formação Acadêmica</a></li>
+                <li><a (click)="closeMenu()" href="">Contato</a></li>
 
             </ul>
 
@@ -40,6 +44,19 @@
 
 </header>
 
+<div class="scroll-top">
+
+    <a href="#welcome">
+
+        <div class="to">
+            <img src="../assets/img/arrow-top.svg" alt="">
+        </div>
+        
+    </a>
+
+</div>
+
+<a name="welcome"></a>
 <div class="welcome">
     
     <div class="container">
@@ -62,6 +79,7 @@
 
 </div>
 
+<a name="about-me"></a>
 <div class="about-me">
 
     <div class="container">
@@ -95,6 +113,7 @@
 
 </div>
 
+<a name="projects"></a>
 <div class="projects">
     
     <div class="container">
@@ -156,6 +175,7 @@
 
 </div>
 
+<a name="skills"></a>
 <div class="skills" #skillsSection>
 
     <div class="container">
@@ -181,6 +201,7 @@
 
 </div>
 
+<a name="formations"></a>
 <div class="formations">
 
     <div class="container">
@@ -191,7 +212,7 @@
 
         <div class="courses">
 
-            <div class="course bottom" *ngFor="let item of [0, 1, 2]" #aside>
+            <div class="course top" *ngFor="let item of [0, 1, 2]" #aside>
 
                 <div class="flex">
                     

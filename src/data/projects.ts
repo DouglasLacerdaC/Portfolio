@@ -25,6 +25,6 @@ export const Projects = [
         description: `Outro projeto com finalidade de clonar uma grande plataforma, dessa vez a Twitch. 
         Busquei testar minhas habilidades com angular e colocando apenas conteúdos que consumo bastante.`,
         image: '../assets/img/projects/twitch.png',
-        link: ''
+        link: 'https://'
     }
 ]

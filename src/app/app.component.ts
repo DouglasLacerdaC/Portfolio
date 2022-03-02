@@ -56,6 +56,17 @@ export class AppComponent implements OnInit {
 
   }
 
+  closeMenu() {
+    this.menu.nativeElement.classList.toggle('menu-open')
+    this.navMenu.nativeElement.classList.toggle('links-visible')
+
+    if (document.body.style.overflow == 'hidden')
+
+      document.body.style.overflow = 'auto'
+    
+    else document.body.style.overflow = 'hidden'
+  }
+
   animaScroll() {
 
     const topPage = window.pageYOffset + ((window.innerHeight * 3) / 4)
@@ -88,7 +99,7 @@ export class AppComponent implements OnInit {
     this.startX = e.offsetX - this.slider.nativeElement.offsetLeft
     this.sliderSkills.nativeElement.style.cursor = 'grabbing'
 
-    this.slider.nativeElement.style.animation = ''
+    this.slider.nativeElement.style.animation = 'test 3s'
 
   }
 

@@ -26,7 +26,7 @@ header {
             width: 60px;
             height: 60px;
             padding: 20px;
-            border: 1px solid $white-color;
+            border: 2px solid $white-color;
             cursor: pointer;
 
             &.menu-open {
@@ -82,16 +82,17 @@ header {
     }
     
     .links {
-        @include flex(center, center, row);
+        @include flex(flex-start, center, column);
         position: fixed;
-        left: -300px;
+        left: -350px;
         top: -150px;
-        min-width: 300px;
-        min-height: 300px;
+        min-width: 350px;
+        min-height: 350px;
         background-color: $white-color;
         border-radius: 20%;
         transition: 0.4s cubic-bezier(0.65, 1.58, 0.46, 0.72);
         z-index: 2000;
+        padding: 20px 0 0;
 
         & + .background-links {
             position: fixed;
@@ -104,6 +105,7 @@ header {
             cursor: pointer;
             visibility: hidden;
             opacity: 0;
+            transition: 400ms;
             
         }
         
@@ -123,10 +125,8 @@ header {
                 ul {
     
                     li {
-    
-                        a {
-                            opacity: 1;
-                        }
+                        opacity: 1;
+                        transform: translateX(0);
     
                     }
     
@@ -142,6 +142,29 @@ header {
             ul {
 
                 li {
+                    opacity: 0;
+                    transition: 200ms;
+                    transform: translateX(-80px);
+
+                    &:nth-child(1) {
+                        transition-delay: 400ms;
+                    }
+                    
+                    &:nth-child(2) {
+                        transition-delay: 800ms;
+                    }
+                    
+                    &:nth-child(3) {
+                        transition-delay: 1.2s;
+                    }
+                    
+                    &:nth-child(4) {
+                        transition-delay: 1.6s;
+                    }
+                    
+                    &:nth-child(5) {
+                        transition-delay: 2s;
+                    }
 
                     a {
                         color: $first-color;
@@ -149,12 +172,65 @@ header {
                         font-weight: bold;
                         display: inline-block;
                         padding: 5px 0;
-                        opacity: 0;
-                        transition: 200ms;
+
                     }
 
                 }
 
+            }
+
+        }
+
+    }
+
+}
+
+.scroll-top {
+    @include flex(center, center, row);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+
+    a {
+        transition: 400ms;
+        
+        &:hover {
+            padding: 0 0 5px 0;
+            
+            .to {
+                position: relative;
+                transform: translateY(-10px);
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+
+                img {
+                    width: 30px;
+                    opacity: 1;
+                    visibility: visible
+                }
+
+            }
+
+        }
+
+        .to {
+            @include flex(center, center, row);
+            width: 100px;
+            height: 5px;
+            background-color: #e4a126;
+            z-index: 1000;
+            transition: 400ms;
+            border-radius: 20px;
+            box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.14);
+
+
+            img {
+                width: 0;
+                opacity: 0;
+                visibility: hidden;
+                transition: 400ms;
             }
 
         }
@@ -377,7 +453,18 @@ header {
                                 font-size: 15px;
                                 padding: 3px 20px;
                                 border-radius: 5px;
+                                transition: 400ms;
+
+                                &:hover {
+                                    background-color: transparent;
+                                    animation: animationCourse 3s linear infinite;
+                                    background-image: linear-gradient(90deg,#0080b3,#98b0ff,#0080b3,#98b0ff);
+                                    background-size: 300% 100%;
+                                    color: $white-color
+                                }
+
                             }
+
                         }
 
                     }
@@ -654,4 +741,11 @@ header {
 @keyframes animationCourse {
     0% { background-position: 100% 0%; }
     100% { background-position: 0% 0%; }
+}
+
+@keyframes test {
+    100% {
+        transform: translateX(0);
+        transition: 3s;
+    }
 }
