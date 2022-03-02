@@ -1,27 +1,35 @@
-# PortfolioV2
+## Douglas Lacerda - Portfólio
+A uns meses atrás desenvolvi o meu primeiro portfólio, onde pude aplicar minhas primerias habilidades com desenvolvimento front-end, onde obtive esse resultado:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.7.
+![Screenshot](./src/assets/img/readme/primary.png)
 
-## Development server
+Após alguns meses de aprendizado após o meu primeiro portfólio, decidi desenvolve uma nova release, onde agreguei ainda mais conhecimentos e novas tecnologias que não conseguia utilizar antigamente. E assim ficou a nova versão:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+![Screenshot](./src/assets/img/readme/new.png)
 
-## Code scaffolding
+Meu principal objetivo em desenvolver esse projeto, além de demonstrar meu pequeno avanço, é demonstrar aos recrutadores minhas habilidades, pois atualmente estou cursando Análise e Desenvolvimento de Sistemas e estou em busca de um estágio, onde eu possa aplicar minhas habilidades e disponibilizar apoio ao time.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Demonstrando um pouco do projeto:
 
-## Build
+# Quem sou eu?
+Aqui eu demonstro um pouco sobre mim
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+![Screenshot](./src/assets/img/readme/about-me.png)
 
-## Running unit tests
+# Alguns projetos
+Aqui eu demonstro alguns projetos que desenvolvi e postei no github.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![Screenshot](./src/assets/img/readme/projects.png)
 
-## Running end-to-end tests
+# Habilidades
+Aqui eu slider onde pude colocar cada habilidade minha em cards e poder demonstrar facilmente.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+![Screenshot](./src/assets/img/readme/skills.png)
 
-## Further help
+## Tecnologias utilizadas durante o projeto:
+- Angular
+- SCSS
+- Figma
+- GIT
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
