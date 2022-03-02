@@ -704,6 +704,10 @@ header {
             border-radius: 10px;
             @include flex(center, center, row);
             gap: 40px;
+
+            @media(max-width: 400px) {
+                @include flex(center, center, column);
+            }
             
             .item {
                 @include flex(center, center, row);
@@ -717,7 +721,7 @@ header {
                 transition: 400ms;
 
                 &:hover {
-                    transform: translateY(-50px);
+                    transform: translateY(-40px);
                 }
 
                 img {
