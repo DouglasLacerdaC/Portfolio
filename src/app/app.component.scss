@@ -312,7 +312,7 @@ header {
             margin: 0 0 80px 0;
 
             @media(max-width: 900px) {
-                @include flex(center, center, column)
+                @include flex(center, center, column);
             }
 
             .content {
@@ -327,6 +327,11 @@ header {
 
             img {
                 z-index: -1;
+
+                @media(max-width: 430px) {
+                    width: 100%;
+                }
+
             }
 
         }
@@ -600,8 +605,12 @@ header {
 }
 
 .formations {
+    background-image: url('../assets/img/picos.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     min-height: 100vh;
-    margin-bottom: 40px;
+    padding-bottom: 100px;
 
     .container {
 
@@ -676,6 +685,51 @@ header {
         
     }
 
+
+}
+
+.contact {
+    padding: 0 0 50px 0;
+    background-color: #21002D;
+
+    .container {
+
+        h3 {
+            @include h3($white-color, 50px, 50px);
+        }
+
+        .links {
+            background-image: url('../assets/img/low.png');
+            padding: 20px;
+            border-radius: 10px;
+            @include flex(center, center, row);
+            gap: 40px;
+            
+            .item {
+                @include flex(center, center, row);
+                width: 75px;
+                height: 75px;
+                background-repeat: no-repeat;
+                background-color: rgb(231, 231, 231);
+                border-radius: 50%;
+                background-size: cover;
+                box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.14);
+                transition: 400ms;
+
+                &:hover {
+                    transform: translateY(-50px);
+                }
+
+                img {
+                    width: 30px;
+                }
+
+
+            }
+
+        }
+
+    }
 
 }
 

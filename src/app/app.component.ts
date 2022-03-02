@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ViewChildren } from '@angular/core';
+import { Formations } from 'src/data/formations';
 import { Projects } from 'src/data/projects';
 import { Skills } from 'src/data/skills';
 
@@ -15,17 +16,18 @@ export class AppComponent implements OnInit {
 
   @ViewChild('sliderSkills') sliderSkills: any
   @ViewChild('slider') slider: any
-  
+
   @ViewChild('skillsSection') skillsSection: any
 
   projects = Projects
   skills = Skills
+  formations = Formations
 
   pressed: boolean = false
   startX: any
   x: any
-  
-  constructor() {}
+
+  constructor() { }
 
   ngOnInit(): void {
 
@@ -51,7 +53,7 @@ export class AppComponent implements OnInit {
     if (document.body.style.overflow == 'hidden')
 
       document.body.style.overflow = 'auto'
-    
+
     else document.body.style.overflow = 'hidden'
 
   }
@@ -63,32 +65,32 @@ export class AppComponent implements OnInit {
     if (document.body.style.overflow == 'hidden')
 
       document.body.style.overflow = 'auto'
-    
+
     else document.body.style.overflow = 'hidden'
   }
 
   animaScroll() {
 
     const topPage = window.pageYOffset + ((window.innerHeight * 3) / 4)
-    
-    if(this.skillsSection.nativeElement.getBoundingClientRect().top < 100) {
+
+    if (this.skillsSection.nativeElement.getBoundingClientRect().top < 100) {
 
       this.slider.nativeElement.style.animation = 'slider 20s infinite'
 
     }
-    
+
     this.aside.forEach((element: any) => {
 
-      if(topPage > element.nativeElement.offsetTop) {
+      if (topPage > element.nativeElement.offsetTop) {
 
         element.nativeElement.classList.add('aside-animation')
-  
+
       } else {
-  
+
         element.nativeElement.classList.remove('aside-animation')
-  
+
       }
-      
+
     })
 
   }
@@ -105,7 +107,7 @@ export class AppComponent implements OnInit {
 
   move(e: MouseEvent) {
 
-    if(!this.pressed) {
+    if (!this.pressed) {
       return e.preventDefault()
     }
 
@@ -115,19 +117,19 @@ export class AppComponent implements OnInit {
 
     this.slider.nativeElement.style.left = `${this.x - this.startX}px`
 
-    if(parseInt(this.slider.nativeElement.style.left) > 10)
+    if (parseInt(this.slider.nativeElement.style.left) > 10)
       this.slider.nativeElement.style.left = '0px'
 
   }
 
   enter() {
-          
+
     this.sliderSkills.nativeElement.style.cursor = 'grab'
 
   }
 
   up() {
-          
+
     this.sliderSkills.nativeElement.style.cursor = 'grab'
 
   }

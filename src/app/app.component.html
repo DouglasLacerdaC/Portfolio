@@ -19,7 +19,9 @@
     <div class="links" #navMenu>
 
         <div class="memoji">
+            
             <img src="../assets/img/memoji.png" width="100" alt="">
+        
         </div>
 
         <nav>
@@ -30,7 +32,7 @@
                 <li><a (click)="closeMenu()" href="#projects">Projetos</a></li>
                 <li><a (click)="closeMenu()" href="#skills">Minhas habilidades</a></li>
                 <li><a (click)="closeMenu()" href="#formations">Formação Acadêmica</a></li>
-                <li><a (click)="closeMenu()" href="">Contato</a></li>
+                <li><a (click)="closeMenu()" href="#contact">Contato</a></li>
 
             </ul>
 
@@ -212,7 +214,7 @@
 
         <div class="courses">
 
-            <div class="course top" *ngFor="let item of [0, 1, 2]" #aside>
+            <div class="course top" *ngFor="let formation of formations" #aside>
 
                 <div class="flex">
                     
@@ -224,11 +226,11 @@
 
                     <div class="informations">
 
-                        <h4>Ensino Médio, Completo</h4>
+                        <h4>{{ formation.type }}</h4>
 
-                        <p>E.E. Professor Marcos Holanda Almeida, Guarulhos</p>
+                        <p>{{ formation.where }}</p>
 
-                        <span>2021</span>
+                        <span>{{ formation.date }}</span>
 
                     </div>
 
@@ -243,3 +245,36 @@
     </div>
 
 </div>
+
+<div class="contact">
+    
+    <div class="container">
+        
+        <h3>Contatos</h3>
+
+        <div class="links">
+
+            <a href="" class="item">
+
+                <img src="../assets/img/github.svg" alt="">
+            
+            </a>
+            
+            <a href="" class="item">
+
+                <img src="../assets/img/linkedin.svg" alt="">
+            
+            </a>
+            
+            <a href="" class="item">
+
+                <img src="../assets/img/telephone.svg" alt="">
+            
+            </a>
+
+        </div>
+        
+    </div>
+    
+</div>
+<a name="contact"></a>
