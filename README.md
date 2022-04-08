@@ -22,7 +22,7 @@ Aqui eu demonstro alguns projetos que desenvolvi e postei no github.
 ![Screenshot](./src/assets/img/readme/projects.png)
 
 ## Habilidades
-Aqui eu slider onde pude colocar cada habilidade minha em cards e poder demonstrar facilmente.
+Aqui eu desenvolvi um slider onde pude colocar cada habilidade minha em cards e demonstrar facilmente.
 
 ![Screenshot](./src/assets/img/readme/skills.png)
 
