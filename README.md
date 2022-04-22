@@ -32,4 +32,6 @@ Aqui eu desenvolvi um slider onde pude colocar cada habilidade minha em cards e 
 - Figma
 - GIT
 
+Link preview: <https://portfolio-douglc.vercel.app/>
+
 
