@@ -103,7 +103,7 @@ export class AppComponent implements OnInit {
 
     this.x = e.offsetX
     this.slider.nativeElement.style.left = `${this.x - this.startX}px`
-    const maxSlider = (this.slider.nativeElement.getBoundingClientRect().width - window.screen.width) + 5000
+    const maxSlider = this.slider.nativeElement.getBoundingClientRect().width - window.screen.width
 
     if(parseInt(this.slider.nativeElement.style.left) > 0) {
       
