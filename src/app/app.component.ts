@@ -32,15 +32,11 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
 
     window.addEventListener('scroll', () => {
-
       this.animaScroll()
-
     })
 
     window.addEventListener('mouseup', () => {
-
       this.pressed = false
-
     })
 
   }
@@ -73,12 +69,6 @@ export class AppComponent implements OnInit {
 
     const topPage = window.pageYOffset + ((window.innerHeight * 3) / 4)
 
-    if (this.skillsSection.nativeElement.getBoundingClientRect().top < 100) {
-
-      this.slider.nativeElement.style.animation = 'slider 20s infinite'
-
-    }
-
     this.aside.forEach((element: any) => {
 
       if (topPage > element.nativeElement.offsetTop) {
@@ -99,39 +89,36 @@ export class AppComponent implements OnInit {
 
     this.pressed = true
     this.startX = e.offsetX - this.slider.nativeElement.offsetLeft
-    this.sliderSkills.nativeElement.style.cursor = 'grabbing'
-
-    this.slider.nativeElement.style.animation = 'test 3s'
 
   }
 
   move(e: MouseEvent) {
 
+    console.log()
+    // console.log(window.screen.width)
+
     if (!this.pressed) {
       return e.preventDefault()
     }
 
-    this.slider.nativeElement.style.animation = ''
-
     this.x = e.offsetX
-
     this.slider.nativeElement.style.left = `${this.x - this.startX}px`
+    const maxSlider = (this.slider.nativeElement.getBoundingClientRect().width - window.screen.width) + 5000
 
-    if (parseInt(this.slider.nativeElement.style.left) > 10)
+    if(parseInt(this.slider.nativeElement.style.left) > 0) {
+      
       this.slider.nativeElement.style.left = '0px'
-
-  }
-
-  enter() {
-
-    this.sliderSkills.nativeElement.style.cursor = 'grab'
+    
+    } else if(parseInt(this.slider.nativeElement.style.left) < -maxSlider) {
+    
+      this.slider.nativeElement.style.left = `-${maxSlider}px`
+    
+    }
 
   }
 
   up() {
-
-    this.sliderSkills.nativeElement.style.cursor = 'grab'
-
+    this.pressed = false
   }
 
 

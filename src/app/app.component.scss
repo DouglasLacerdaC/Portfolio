@@ -573,6 +573,18 @@ header {
         height: 300px;
         position: relative;
         overflow: hidden;
+        cursor: grab;
+
+        @media (max-width: 625px) {
+            & {
+                overflow-x: auto;
+
+                &::-webkit-scrollbar {
+                    height: 0
+                }
+
+            }
+        }
 
         .slider {
             @include flex(space-between, flex-start, row);
@@ -590,10 +602,10 @@ header {
                 background-color: $white-color;
                 box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.14);
                 border-radius: 20px;
+                pointer-events: none;
 
                 img {
                     user-select: none;
-
                 }
 
             }
