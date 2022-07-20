@@ -2,7 +2,7 @@
 
 ![Screenshot](./src/assets/img/readme/new.png)
 
-Meu principal objetivo em desenvolver esse projeto, além de demonstrar meu pequeno avanço, é demonstrar aos recrutadores minhas habilidades, pois atualmente estou cursando Análise e Desenvolvimento de Sistemas e estou em busca de uma oportunidade como desenvolvedor, onde eu possa aplicar minhas habilidades e disponibilizar apoio ao time.
+Meu principal objetivo em desenvolver esse projeto, além de demonstrar meu pequeno avanço, é demonstrar aos recrutadores minhas habilidades, pois estou em busca de uma oportunidade como desenvolvedor, onde eu possa aplicar minhas habilidades e disponibilizar apoio ao time.
 
 # Demonstrando um pouco do projeto:
 
