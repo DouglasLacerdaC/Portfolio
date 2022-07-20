@@ -1,9 +1,4 @@
 # Douglas Lacerda - Portfólio
-A uns meses atrás desenvolvi o meu primeiro portfólio, onde pude aplicar minhas primerias habilidades com desenvolvimento front-end, onde obtive esse resultado:
-
-![Screenshot](./src/assets/img/readme/primary.png)
-
-Após alguns meses de aprendizado após o meu primeiro portfólio, decidi desenvolver uma nova release, onde agreguei ainda mais conhecimentos e novas tecnologias que não conseguia utilizar antigamente. E assim ficou a nova versão:
 
 ![Screenshot](./src/assets/img/readme/new.png)
 
